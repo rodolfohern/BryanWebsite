@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart } from './components';
+import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //due to update, switch tag has been changed to Routes
 const App = () => {
   const [ products, setProducts ] =useState([]);
   const [cart, setCart] = useState({});
+
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -59,6 +60,7 @@ const App = () => {
             handleUpdateCartQty={handleUpdateCartQty}
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart}/>}/>
+          <Route exact path="/checkout" element={<Checkout cart={cart}></Checkout>}/>
         </Routes>
       </div>
     </Router>
