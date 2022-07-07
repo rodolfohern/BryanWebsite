@@ -15,14 +15,14 @@ const Navbar = ({ totalItems }) => {
     <>
         <AppBar position="fixed" className={classes.appBar} color="inherit">
             <Toolbar>
-                <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
+                <Typography component={Link} to="/BryanWebsite/" variant="h6" className={classes.title} color="inherit">
                     <img src={logo} alt="Bryan's Website" height="25px" className={classes.image}/>
                     Bryan's Shoe Resell
                 </Typography>
                 <div className={classes.grow} />
-                {location.pathname === '/' && (
+                {location.pathname === '/BryanWebsite/' && (
                 <div className={classes.button}>
-                    <IconButton component={Link} to="/cart" aria-label="Show Cart Items" color="inherit">
+                    <IconButton component={Link} to="/BryanWebsite/Cart" aria-label="Show Cart Items" color="inherit">
                         <Badge badgeContent={totalItems} color="secondary">
                             <ShoppingCart />
                         </Badge>
